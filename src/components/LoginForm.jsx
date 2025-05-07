@@ -24,7 +24,7 @@ function LoginForm() {
   return (
     <form className="login-form" onSubmit={handleSubmit}>
       <label>
-        이메일
+        아이디
         <input
           type="text"
           value={usernm}

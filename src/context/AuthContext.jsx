@@ -1,16 +1,31 @@
-// ✅ 리팩토링된 src/context/AuthContext.jsx
-import { createContext, useContext, useState } from "react";
+// src/context/AuthContext.jsx
+import { createContext, useContext, useState, useEffect } from "react";
 
-const AuthContext = createContext(null);
+const AuthContext = createContext();
 
 function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [userNm, setUserNm] = useState(null);
 
-  const login = (usernm) => setUser({ usernm });
-  const logout = () => setUser(null);
+  // 최초 로드 시 sessionStorage에서 user 복원
+  useEffect(() => {
+    const storedUser = localStorage.getItem("_mobi_userNm");
+    if (storedUser) {
+      setUserNm(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const login = (userData) => {
+    setUserNm(userData);
+    localStorage.setItem("_mobi_userNm", JSON.stringify(userData));
+  };
+  
+  const logout = () => {
+    setUserNm(null);
+    localStorage.removeItem("_mobi_userNm");
+  };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ userNm: userNm, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
@@ -20,7 +35,7 @@ function useAuth() {
   return useContext(AuthContext);
 }
 
-// ✅ export는 객체 하나로 통합 (HMR 안정적)
+// export
 export default {
   AuthProvider,
   useAuth,

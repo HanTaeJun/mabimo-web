@@ -4,7 +4,7 @@ import "./Header.css";
 
 function Header() {
   const { useAuth } = Auth;
-  const { user, logout } = useAuth();
+  const { userNm, logout } = useAuth();
 
   return (
     <header className="header">
@@ -15,9 +15,9 @@ function Header() {
         <Link to="/game-info">게임정보</Link>
         <Link to="/community">커뮤니티</Link>
         
-        {user ? (
+        {userNm ? (
           <div className="auth-area">
-            <span className="username">{user.usernm}</span>
+            <span className="username">{userNm}</span>
             <button className="logout-btn" onClick={logout}>로그아웃</button>
           </div>
         ) : (
