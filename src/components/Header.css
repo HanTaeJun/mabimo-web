@@ -1,0 +1,84 @@
+/* 전체 헤더 스타일 */
+.header {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* font-family: 'Georgia', 'Times New Roman', serif; */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+/* 좌측 로고 */
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px #000;
+}
+/* 우측 메뉴 영역 */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 공통 링크 스타일 */
+.header-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* 인증 영역 */
+.auth-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 로그인 사용자 이름 */
+.username {
+  font-weight: bold;
+  color: #ffcc66;
+  font-size: 0.95rem;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* 로그아웃 버튼 */
+.logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
+/* 로그인 링크 */
+.login-link {
+  color: white;
+  font-weight: 600;
+  margin-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 1rem;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
