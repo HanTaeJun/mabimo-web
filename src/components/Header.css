@@ -82,3 +82,43 @@
 .login-link:hover {
   text-decoration: underline;
 }
+
+/* 헤더 로고 (타이틀) */
+.header-logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.4rem; /* 줄임: 반응형 대응 */
+  font-weight: bold;
+  flex-shrink: 0; /* 로고가 너무 줄어들지 않도록 방지 */
+  white-space: nowrap;
+}
+
+.header-logo img {
+  width: 2rem;
+  height: auto;
+  margin-right: 0.6rem;
+  filter: invert(100%) sepia(0%) saturate(7455%) hue-rotate(325deg) brightness(113%) contrast(110%);
+}
+
+/* 반응형 대응 */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .header-logo {
+    font-size: 1.4rem;
+  }
+
+  .header-logo img {
+    width: 1.1rem;
+    margin-right: 0.4rem;
+  }
+}

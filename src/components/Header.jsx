@@ -8,11 +8,11 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="header-logo mabi-header-user">
-        <Link to="/">🧭 마비노기 Info</Link>
+      <div className="header-logo">
+        <Link to="/"><img src="/sheep.png" alt="" />MOBINOGI</Link>
       </div>
       <nav className="nav-links">
-        <Link to="/game-info">게임 정보</Link>
+        <Link to="/game-info">게임정보</Link>
         <Link to="/community">커뮤니티</Link>
         
         {user ? (
