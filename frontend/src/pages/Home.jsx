@@ -7,7 +7,10 @@ function Home() {
     fetch("/api/hello")
     .then((res) => res.json())
     .then((data) => setMsg(data.message))
-    .catch((err) => console.error("API 호출 오류:", err));
+    .catch((err) => {
+      console.error("API 호출 오류: ", err);
+      // alert("API 호출 오류: "+err);
+    });
   }
 
   const serverMsgReset = () => {

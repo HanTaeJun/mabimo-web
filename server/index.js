@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/api/test', (req, res) => {
+app.get('/', (req, res) => {
   res.send('서버가 정상적으로 작동 중입니다!');
 });
 
