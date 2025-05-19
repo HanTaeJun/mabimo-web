@@ -23,7 +23,7 @@
   }
   
   /* === 헤더/내비게이션 ============ */
-  header {
+  /*header {
     background-color: #343a40;
     color: white;
     padding: 1rem 2rem;
@@ -35,12 +35,22 @@
   nav a {
     margin-left: 1.5rem;
     font-weight: 500;
-  }
+  }*/
   
-  /* === 유틸리티 (선택) ============ */
+  /* === login ============ */
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
   }
-  
+  /* Layout CSS */
+  .app-container {
+    display: flex;
+  }
+
+  .main-content {
+    margin-left: 20px;
+    padding: 30px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+  }
